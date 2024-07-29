@@ -1,0 +1,61 @@
+import Image from "next/image";
+import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
+import DiagonalArrow from "./DiagonalArrow";
+import TypewriterComponent from "./TypewriterComponent";
+
+const Hero = () => {
+  return (
+    <section id="hero" className="flex items-center p-0">
+      <div className="hero-left w-1/2 h-full flex flex-col justify-between px-12 py-8 pt-28">
+        <div className="left-top w-full h-1/2 flex flex-col gap-4">
+          <h2 className="text-tertiary">cargo delivery</h2>
+          <TypewriterComponent
+            textLevel={"h2"}
+            text={"Your partner in global shipping solutions"}
+          />
+        </div>
+        <div className="w-full h-1/2 flex justify-between">
+          <ScrollAnimationWrapper
+            variant="slideInTop"
+            className="h-full aspect-[9/16] overflow-hidden rounded-full border-8 hover:border-2 border-secondary"
+          >
+            <Image
+              src={"/images/shipping.webp"}
+              alt="consol cargo shipping"
+              height={300}
+              width={300}
+              className="h-full w-full"
+            />
+          </ScrollAnimationWrapper>
+          <ScrollAnimationWrapper
+            variant="slideInBottom"
+            className="h-full w-1/2 flex flex-col items-end justify-between"
+          >
+            <p>
+              Consol Cargo offers a wide range of different products and
+              services by air, sea and land. Each of your shipment will be
+              handled with big care
+            </p>
+            <button>
+              <DiagonalArrow />
+            </button>
+          </ScrollAnimationWrapper>
+        </div>
+      </div>
+      <div className="hero-right w-1/2 h-full flex flex-col">
+        <div className="right-top w-full h-1/2">
+          <ScrollAnimationWrapper variant="slideInRight" className={"h-full"}>
+            <div className="w-full h-full px-12 py-8 pt-28 bg-secondary"></div>
+          </ScrollAnimationWrapper>
+        </div>
+        <div className="right-bottom w-full h-1/2">
+          <ScrollAnimationWrapper variant="slideInRight" className="h-full">
+            <div className="w-full h-full px-12 py-8 bg-primary-dark"></div>
+          </ScrollAnimationWrapper>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
