@@ -50,6 +50,7 @@ const Hero = () => {
             alt="consol cargo air shipping"
             width={1000}
             height={1000}
+            className="hero-clipped"
           />
         </div>
       </div>

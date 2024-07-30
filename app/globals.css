@@ -63,6 +63,11 @@ img {
      object-position: center;
 }
 
+.hero-clipped {
+  -webkit-clip-path: polygon(40% 30%, 40% 0%, 100% 0%, 100% 70%, 65% 70%, 65% 100%, 0% 100%, 0% 30%);
+          clip-path: polygon(40% 30%, 40% 0%, 100% 0%, 100% 70%, 65% 70%, 65% 100%, 0% 100%, 0% 30%);
+}
+
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
