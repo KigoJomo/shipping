@@ -47,6 +47,15 @@ h1 {
   line-height: calc(var(--font-size) * 1.618 * 1.618 * 1.618 * 1.1);
 }
 
+.image {
+  filter: url(#round);
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+}
+
 img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -80,7 +89,7 @@ html body main section {
   padding: 2rem 3rem;
   padding-top: 6rem;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1536px) {
   html body main section {
     padding: 2rem 10rem;
     padding-top: 7rem;

@@ -6,7 +6,7 @@ import TypewriterComponent from "./TypewriterComponent";
 const Hero = () => {
   return (
     <section id="hero" className="flex items-center p-0">
-      <div className="hero-left w-1/2 h-full flex flex-col justify-between px-12 py-8 pt-28">
+      <div className="hero-left w-1/2 h-full flex flex-col justify-between px-12 2xl:pl-40 pt-28 pb-16">
         <div className="left-top w-full h-1/2 flex flex-col gap-4">
           <h2 className="text-tertiary">cargo delivery</h2>
           <TypewriterComponent
@@ -42,16 +42,15 @@ const Hero = () => {
           </ScrollAnimationWrapper>
         </div>
       </div>
-      <div className="hero-right w-1/2 h-full flex flex-col">
-        <div className="right-top w-full h-1/2">
-          <ScrollAnimationWrapper variant="slideInRight" className={"h-full"}>
-            <div className="w-full h-full px-12 py-8 pt-28 bg-secondary"></div>
-          </ScrollAnimationWrapper>
-        </div>
-        <div className="right-bottom w-full h-1/2">
-          <ScrollAnimationWrapper variant="slideInRight" className="h-full">
-            <div className="w-full h-full px-12 py-8 bg-primary-dark"></div>
-          </ScrollAnimationWrapper>
+
+      <div className="hero-right w-1/2 h-full flex flex-col pt-28 pb-12 px-12 2xl:pr-40">
+        <div className="main-image image w-full h-full">
+          <Image
+            src="/images/shipping_air.jpg"
+            alt="consol cargo air shipping"
+            width={1000}
+            height={1000}
+          />
         </div>
       </div>
     </section>
