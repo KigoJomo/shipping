@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col items-center relative">
         <Header />
-        <main>{children}</main>
+        <main className="flex flex-col gap-8">{children}</main>
         <svg
           style={{ visibility: "hidden", position: "absolute" }}
           width="0"

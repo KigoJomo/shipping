@@ -19,11 +19,11 @@ const ScrollAnimationWrapper = ({ children, variant, className, duration = 1 }) 
       visible: { opacity: 1, x: 0, transition: { duration } },
     },
     slideInBottom: {
-      hidden: { opacity: 0, y: 100 },
+      hidden: { opacity: 0, y: 200 },
       visible: { opacity: 1, y: 0, transition: { duration } },
     },
     slideInTop: {
-      hidden: { opacity: 0, y: -100 },
+      hidden: { opacity: 0, y: -200 },
       visible: { opacity: 1, y: 0, transition: { duration } },
     },
   };
@@ -32,7 +32,7 @@ const ScrollAnimationWrapper = ({ children, variant, className, duration = 1 }) 
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       variants={variants[variant]}
       className={className}
     >

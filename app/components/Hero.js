@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="hero" className="flex flex-col md:flex-row items-center p-0 overflow-y-scroll md:overflow-hidden">
       <div className="hero-left w-full md:w-1/2 h-screen flex flex-col justify-between px-4 md:px-12 2xl:pl-40 pt-28 pb-16">
-        <div className="left-top w-full h-1/2 flex flex-col gap-4">
+        <div className="left-top w-full h-[50vh] flex flex-col gap-4">
           <h2 className="text-tertiary">cargo delivery</h2>
           <TypewriterComponent
             textLevel={"h2"}
@@ -45,7 +45,7 @@ const Hero = () => {
 
       <div className="hero-right w-full md:w-1/2 md:h-full flex flex-col px-4 pb-4 md:pt-28 md:pb-12 md:px-12 2xl:pr-40">
         <div className="w-full h-full relative">
-          <div className="main-image image w-full h-full">
+          <div className="main-image image w-full h-[50vh] md:h-full">
             <Image
               src="/images/shipping_air.webp"
               alt="consol cargo air shipping"

@@ -98,9 +98,12 @@ html {
     }
 
     background: var(--primary);
+      scroll-snap-type: y mandatory;
 
     main {
       section {
+        scroll-snap-align: start;
+        flex-shrink: 0;
         height: 100dvh;
         width: 100dvw;
         padding: 2rem 3rem;
@@ -115,7 +118,7 @@ html {
 
       @media (max-width: 767px) {
         section {
-          padding: 1rem 1rem;
+          padding: 2rem 1rem;
           padding-top: 5rem;
         }
       }

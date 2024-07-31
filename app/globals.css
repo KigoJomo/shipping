@@ -85,11 +85,14 @@ html body {
   width: 100dvw;
   overflow-x: hidden;
   background: var(--primary);
+  scroll-snap-type: y mandatory;
 }
 html body::-webkit-scrollbar {
   display: none;
 }
 html body main section {
+  scroll-snap-align: start;
+  flex-shrink: 0;
   height: 100dvh;
   width: 100dvw;
   padding: 2rem 3rem;
@@ -103,7 +106,7 @@ html body main section {
 }
 @media (max-width: 767px) {
   html body main section {
-    padding: 1rem 1rem;
+    padding: 2rem 1rem;
     padding-top: 5rem;
   }
 }
