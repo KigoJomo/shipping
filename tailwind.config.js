@@ -19,6 +19,7 @@ module.exports = {
         "secondary-dark": "#b15c16",
         tertiary: "#8B969C", // Light Gray
         white: "#FFFFFF", // White
+        "white-dark": "#c0c0c0", // White
       },
     },
   },

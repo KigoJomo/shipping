@@ -6,6 +6,14 @@ import Footer from "./components/Footer";
 export const metadata = {
   title: "Consol Cargo",
   description: "Consolidation, clearing & forwarding",
+  metadataBase: new URL("https://consolcargo.vercel.app/"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+      "de-DE": "/de-DE",
+    },
+  },
   openGraph: {
     images: "/images/open-graph.png",
   },

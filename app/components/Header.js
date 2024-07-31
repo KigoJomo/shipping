@@ -11,7 +11,6 @@ const Header = () => {
             alt="logo"
             height={100}
             width={80}
-            // className=" h-10"
           />
         </Link>
         <div className="buttons flex items-center gap-8">

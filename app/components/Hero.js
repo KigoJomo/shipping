@@ -39,7 +39,7 @@ const Hero = () => {
               services by air, sea and land. Each of your shipment will be
               handled with big care
             </p>
-            <button>
+            <button className="w-14 md:w-24 aspect-square">
               <DiagonalArrow />
             </button>
           </ScrollAnimationWrapper>
