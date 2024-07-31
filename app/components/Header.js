@@ -9,11 +9,10 @@ const Header = () => {
           <Image
             src={"/images/logo.png"}
             alt="logo"
-            height={32}
-            width={32}
-            className="w-8 h-8"
+            height={100}
+            width={80}
+            // className=" h-10"
           />
-          <h3 className="space-grotesk hidden md:block">Consol cargo</h3>
         </Link>
         <div className="buttons flex items-center gap-8">
           <Button primary text="pricing" className="hidden md:flex" />

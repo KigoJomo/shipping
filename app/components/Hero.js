@@ -5,10 +5,13 @@ import TypewriterComponent from "./TypewriterComponent";
 
 const Hero = () => {
   return (
-    <section id="hero" className="flex flex-col md:flex-row items-center p-0 overflow-y-scroll md:overflow-hidden">
+    <section
+      id="hero"
+      className="flex flex-col md:flex-row items-center p-0 overflow-y-scroll md:overflow-hidden"
+    >
       <div className="hero-left w-full md:w-1/2 h-screen flex flex-col justify-between px-4 md:px-12 2xl:pl-40 pt-28 pb-16">
         <div className="left-top w-full h-[50vh] flex flex-col gap-4">
-          <h2 className="text-tertiary">cargo delivery</h2>
+          <h2 className="text-tertiary">Consol cargo</h2>
           <TypewriterComponent
             textLevel={"h2"}
             text={"Your partner in global shipping solutions"}

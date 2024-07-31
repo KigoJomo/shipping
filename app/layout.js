@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             </filter>
           </defs>
         </svg>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
