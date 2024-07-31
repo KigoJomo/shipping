@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 
 export const metadata = {
-  title: "Shipping",
+  title: "Consol Cargo",
   description: "Consolidation, clearing & forwarding",
   openGraph: {
     images: "/images/open-graph.png",
