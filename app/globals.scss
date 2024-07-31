@@ -10,8 +10,7 @@
   --tertiary: #8b969c;
   --white: #ffffff;
 
-  //    --font-size: clamp(1rem, 7vw, 4rem);
-  --font-size: 1rem;
+     --font-size: clamp(0.9rem, 1.25vw, 2.5rem);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
@@ -34,6 +33,7 @@ h3 {
 p {
   color: var(--tertiary);
   max-width: 60vw;
+  font-size: var(--font-size);
 }
 
 h3 {
@@ -71,8 +71,8 @@ img {
     40% 0%,
     100% 0%,
     100% 70%,
-    65% 70%,
-    65% 100%,
+    45% 70%,
+    45% 100%,
     0% 100%,
     0% 30%
   );

@@ -13,10 +13,10 @@ const Header = () => {
             width={32}
             className="w-8 h-8"
           />
-          <h3 className="space-grotesk">Consol cargo</h3>
+          <h3 className="space-grotesk hidden md:block">Consol cargo</h3>
         </Link>
         <div className="buttons flex items-center gap-8">
-          <Button primary text="pricing" />
+          <Button primary text="pricing" className="hidden md:flex" />
           <Button secondary text="get a quote" />
         </div>
       </header>

@@ -9,7 +9,7 @@
   --secondary-dark: #b15c16;
   --tertiary: #8b969c;
   --white: #ffffff;
-  --font-size: 1rem;
+  --font-size: clamp(0.9rem, 1.25vw, 2.5rem);
 }
 
 * {
@@ -30,6 +30,7 @@ h3 {
 p {
   color: var(--tertiary);
   max-width: 60vw;
+  font-size: var(--font-size);
 }
 
 h3 {
@@ -64,8 +65,8 @@ img {
 }
 
 .hero-clipped {
-  -webkit-clip-path: polygon(40% 30%, 40% 0%, 100% 0%, 100% 70%, 65% 70%, 65% 100%, 0% 100%, 0% 30%);
-          clip-path: polygon(40% 30%, 40% 0%, 100% 0%, 100% 70%, 65% 70%, 65% 100%, 0% 100%, 0% 30%);
+  -webkit-clip-path: polygon(40% 30%, 40% 0%, 100% 0%, 100% 70%, 45% 70%, 45% 100%, 0% 100%, 0% 30%);
+          clip-path: polygon(40% 30%, 40% 0%, 100% 0%, 100% 70%, 45% 70%, 45% 100%, 0% 100%, 0% 30%);
 }
 
 .space-grotesk {

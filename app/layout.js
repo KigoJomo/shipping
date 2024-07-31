@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             <filter id="round">
               <feGaussianBlur
                 in="SourceGraphic"
-                stdDeviation="5"
+                stdDeviation="12"
                 result="blur"
               />
               <feColorMatrix
