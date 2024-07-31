@@ -1,6 +1,7 @@
 // components/Categories.js
 import CategoryItem from "./CategoryItem";
 import FlyingPlane from "./FlyingPlane";
+import SailingShip from "./SailingShip";
 
 const Categories = () => {
   return (
@@ -17,7 +18,7 @@ const Categories = () => {
       />
       <CategoryItem
         title="Sea"
-        AnimatedComponent={() => <div />} // Replace with actual animated component
+        AnimatedComponent={SailingShip} // Replace with actual animated component
         description="Reliable and cost-effective shipping of large volumes of goods by sea."
         bgColor="bg-primary-dark"
       />

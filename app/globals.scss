@@ -157,6 +157,66 @@ img {
   }
 }
 
+@keyframes scroll-horizontal {
+  0% {
+    right: var(--initial)
+  }
+  50% {
+    right: var(--final)
+  }
+  100% {
+    right: var(--initial)
+  }
+}
+
+@keyframes rock-horizontal {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 10%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.sailing-ship {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+  .object,
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    aspect-ratio: 1;
+    transition: all 1s ease;
+    bottom: 0;
+  }
+
+  .object {
+    z-index: 2;
+    height: 75%;
+    background: url("/images/cargoship.webp") center/cover no-repeat;
+    animation: rock-horizontal 5s linear infinite;
+  }
+  &::after {
+    --initial: 0%;
+    --final: 10%;
+    width: 120%;
+    transform: translateX(var(--final));
+    z-index: 1;
+    background: url("/images/water-waves.webp") center/cover no-repeat;
+    animation: scroll-horizontal 3s linear infinite;
+  }
+}
+
 html {
   height: 100dvh;
   width: 100dvw;
