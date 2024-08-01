@@ -195,6 +195,48 @@ img {
   animation: scroll-horizontal 3s linear infinite;
 }
 
+@keyframes scroll-horizontal-land {
+  0% {
+    left: var(--initial);
+  }
+  100% {
+    left: var(--final);
+  }
+}
+.land-shipping {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.land-shipping .object, .land-shipping::before, .land-shipping::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  aspect-ratio: 1;
+  transition: all 1s ease;
+}
+.land-shipping .object {
+  z-index: 2;
+  height: 85%;
+  bottom: 0;
+  background: url("/images/cargotruck.webp") center/cover no-repeat;
+  animation: rock-horizontal 6s linear infinite;
+}
+.land-shipping::before {
+  --initial: 100%;
+  --final: -100%;
+  background: url("/images/road-bottom.webp") center/cover no-repeat;
+  animation: scroll-horizontal-land 3s linear infinite;
+}
+.land-shipping::after {
+  background: url("/images/road-top.webp") center/cover no-repeat;
+  animation: none;
+}
+
 html {
   height: 100dvh;
   width: 100dvw;
