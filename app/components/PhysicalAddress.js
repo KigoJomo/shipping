@@ -1,9 +1,9 @@
 import CallIcon from "./CallIcon";
 import LocationIcon from "./LocationIcon";
 
-const PhysicalAddress = ({city, address, phone_number})=>{
+const PhysicalAddress = ({index, city, address, phone_number})=>{
     return (
-        <div className="w-full h-28 border-y border-tertiary flex items-start">
+        <div className={`w-full h-28 md:h-full border-t border-tertiary flex items-start ${index === 2 && 'border-b'}`}>
             <p className="capitalize w-1/3 mt-2 text-white">{city}</p>
             <div className="w-2/3 h-full flex flex-col">
                 <div className="w-full h-1/2 flex items-start md:items-center gap-4 py-2">

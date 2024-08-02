@@ -5,6 +5,7 @@
 :root {
   --primary: #192f3b;
   --primary-dark: #071d22;
+  --primary-light: #3b3b3b;
   --secondary: #ec6c06;
   --secondary-dark: #b15c16;
   --tertiary: #8b969c;
@@ -267,6 +268,12 @@ img {
   &::after {
     background: url("/images/road-top.webp") center/cover no-repeat;
     animation: none;
+  }
+}
+
+.scrollbar-hidden{
+  &::-webkit-scrollbar{
+    display: none;
   }
 }
 

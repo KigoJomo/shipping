@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Contact = () => {
   return (
-    <section className="flex flex-col gap-8 relative overflow-y-scroll md:overflow-hidden h-fit md:h-screen">
+    <section className="bg-primary-dark flex flex-col gap-8 relative overflow-y-scroll md:overflow-hidden h-fit md:h-screen">
       <div className="w-full h-fit md:h-[90%] flex flex-col md:flex-row gap-8">
         <Addresses />
         <ContactForm />
