@@ -1,13 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FieldWrapper from "./FieldWrapper";
 import DiagonalArrow from "./DiagonalArrow";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     const formData = new FormData(event.target);
     try {
       const response = await fetch(event.target.action, {
@@ -26,8 +30,6 @@ const ContactForm = () => {
         );
         event.target.reset();
       } else {
-        console.error(error);
-        console.table(formData);
         toast.error("Something went wrong. Please try again.", {
           theme: "dark",
         });
@@ -39,6 +41,8 @@ const ContactForm = () => {
           theme: "dark",
         }
       );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -91,12 +95,19 @@ const ContactForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none"
+          className={`w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+          disabled={loading}
         >
-          <p className="text-white">send</p>
-          <div className="w-6 aspect-square">
-            <DiagonalArrow />
-          </div>
+          {loading ? (
+            <div className="w-6 h-6 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+          ) : (
+            <>
+              <p className="text-white">send</p>
+              <div className="w-6 aspect-square">
+                <DiagonalArrow />
+              </div>
+            </>
+          )}
         </button>
       </form>
     </div>
