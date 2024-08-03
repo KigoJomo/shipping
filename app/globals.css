@@ -247,6 +247,24 @@ img {
   display: none;
 }
 
+.scrollbar-themed::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 8px;
+}
+.scrollbar-themed::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
+.scrollbar-themed::-webkit-scrollbar-thumb {
+  background: var(--tertiary);
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .scrollbar-themed::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 html {
   height: 100dvh;
   width: 100dvw;

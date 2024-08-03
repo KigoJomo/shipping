@@ -1,6 +1,5 @@
 import "./globals.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 
 export const metadata = {
@@ -22,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="flex flex-col items-center relative">
+      <body className="flex flex-col items-center relative scroll-smooth">
         <Header />
         <main className="flex flex-col gap-8">{children}</main>
         <svg
@@ -49,7 +48,6 @@ export default function RootLayout({ children }) {
             </filter>
           </defs>
         </svg>
-        {/* <Footer /> */}
       </body>
     </html>
   );
