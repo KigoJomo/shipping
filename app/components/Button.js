@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Button = ({ primary, secondary, text, className }) => {
+const Button = ({ primary, secondary, text, className, onClick }) => {
   const buttonClass = classNames(
     "px-4 py-2 rounded-lg md:rounded-xl text-white text-xs md:text-base focus:outline-none transition-all duration-200 capitalize",
     {
@@ -12,7 +12,7 @@ const Button = ({ primary, secondary, text, className }) => {
     className
   );
 
-  return <button className={buttonClass}>{text}</button>;
+  return <button onClick={onClick} className={buttonClass}>{text}</button>;
 };
 
 Button.propTypes = {

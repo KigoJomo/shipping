@@ -1,6 +1,6 @@
 import SelectInput from "./SelectInput";
 
-const RegularWrapper = ({ name, type, label, options, onChange }) => {
+const RegularWrapper = ({ name, type, label, options, onChange, placeholder }) => {
   return (
     <div className="fieldwrapper w-full flex flex-col gap-2 md:gap-4">
       <label
@@ -16,8 +16,9 @@ const RegularWrapper = ({ name, type, label, options, onChange }) => {
           type={type}
           id={name}
           name={name}
+          placeholder={placeholder}
           required
-          className="w-full border-0 border-b border-b-tertiary outline-none focus:outline-none focus:border-b-tertiary bg-transparent focus:bg-transparent"
+          className="w-full border-0 border-b border-b-tertiary outline-none focus:outline-none focus:border-b-tertiary bg-transparent focus:bg-transparent placeholder:text-xs"
         />
       )}
     </div>

@@ -91,11 +91,14 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
       });
       if (response.ok) {
         toast.success(
-          "Thank you for your message! We'll get back to you soon.",
+          "Request submitted.  We'll contact you shortly.",
           {
             theme: "dark",
           }
         );
+        setTimeout(() =>{
+          onClose();
+        }, 2000)
         event.target.reset();
       } else {
         toast.error("Something went wrong. Please try again.", {
@@ -104,7 +107,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
       }
     } catch (error) {
       toast.error(
-        "There was an error sending your message. Please try again.",
+        "There was an error sending your request. Please try again.",
         {
           theme: "dark",
         }
@@ -117,7 +120,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 transition-all duration-700">
       <div className="bg-primary border border-tertiary px-4 md:px-8 py-0 rounded-lg w-4/5 md:w-full h-4/5 md:h-[90%] max-w-lg relative flex flex-col gap-6">
         <button className="absolute top-4 right-6 text-5xl font-thin" onClick={onClose}>
           &times;
@@ -130,6 +133,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
           onSubmit={handleSubmit}
           className="w-full h-full flex flex-col gap-8 overflow-y-scroll scrollbar-themed md:pr-6 pb-6"
         >
+          <input type="hidden" name="freight-option" value={currentFreightOption} />
           <CategorySelect
             label={"Freight option"}
             options={FreightOptions}
@@ -169,6 +173,17 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
             name={"weight"}
             type={"number"}
             label={"Weight (kg) - Rate: $13/kg"}
+          />
+          <RegularWrapper
+            name={"cbm"}
+            type={"number"}
+            label={"CBM"}
+          />
+          <RegularWrapper
+            name={"phone"}
+            type={"tel"}
+            label={"Phone number"}
+            placeholder={"eg. +254 7XX XXX XXX"}
           />
           <button
             type="submit"

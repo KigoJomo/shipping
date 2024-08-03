@@ -1,6 +1,5 @@
+// layout.js
 import "./globals.css";
-import Header from "./components/Header";
-
 
 export const metadata = {
   title: "Consol Cargo",
@@ -22,8 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col items-center relative scroll-smooth">
-        <Header />
-        <main className="flex flex-col gap-8">{children}</main>
+        {children}
         <svg
           style={{ visibility: "hidden", position: "absolute" }}
           width="0"
