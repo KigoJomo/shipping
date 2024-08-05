@@ -2,7 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Button = ({ primary, secondary, text, className, onClick }) => {
+const Button = ({
+  primary = false,
+  secondary = false,
+  text,
+  className,
+  onClick,
+}) => {
   const buttonClass = classNames(
     "px-4 py-2 rounded-lg md:rounded-xl text-white text-xs md:text-base focus:outline-none transition-all duration-200 capitalize",
     {
@@ -12,7 +18,11 @@ const Button = ({ primary, secondary, text, className, onClick }) => {
     className
   );
 
-  return <button onClick={onClick} className={buttonClass}>{text}</button>;
+  return (
+    <button onClick={onClick} className={buttonClass}>
+      {text}
+    </button>
+  );
 };
 
 Button.propTypes = {
@@ -20,11 +30,6 @@ Button.propTypes = {
   secondary: PropTypes.bool,
   text: PropTypes.string.isRequired,
   className: PropTypes.string,
-};
-
-Button.defaultProps = {
-  primary: false,
-  secondary: false,
 };
 
 export default Button;

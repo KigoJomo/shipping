@@ -10,7 +10,8 @@ const Header = ({openModal}) => {
             src={"/images/logo.png"}
             alt="logo"
             height={100}
-            width={80}
+            width={100}
+            className="w-20"
           />
         </Link>
         <div className="buttons flex items-center gap-8">
