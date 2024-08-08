@@ -59,6 +59,15 @@ h1 {
   line-height: calc(var(--font-size) * 1.618 * 1.618 * 1.618 * 1.1);
 }
 
+input, textarea, select, option{
+  color: var(--white);
+  background-color: var(--primary);
+  outline: none;
+  &:focus{
+    outline: none;
+  }
+}
+
 .image {
   filter: url(#round);
 }

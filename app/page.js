@@ -1,37 +1,26 @@
-// page.js
-"use client";
-import { useState } from "react";
+// page.js (Server Component)
 import Header from "./components/Header";
-import ModalForm from "./components/ModalForm";
 import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import Procedure from "./components/Procedure";
 import Contact from "./components/Contact";
+import Testimonials from "./components/Testimonials";
+import ClientWrapper from "./components/ClientWrapper";
 
+// page.js (Server Component)
 export default function Home() {
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedFreight, setSelectedFreight] = useState("");
-
-  const openModal = (freight) => {
-    setSelectedFreight(freight);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-    setSelectedFreight("");
-  };
-
   return (
     <>
-    <Header  openModal={openModal} />
+      <ClientWrapper>
+        <Header />
+      </ClientWrapper>
       <main className="flex flex-col gap-8">
         <Hero />
         <Categories />
         <Procedure />
+        <Testimonials />
         <Contact />
       </main>
-      <ModalForm isOpen={isModalOpen} onClose={closeModal} freightOption={selectedFreight} />
     </>
   );
 }
