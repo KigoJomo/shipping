@@ -1,5 +1,3 @@
-// ReviewForm component (ReviewForm.js)
-
 'use client'
 
 import { useState } from 'react'
@@ -7,42 +5,47 @@ import { ToastContainer, toast } from 'react-toastify'
 import RegularWrapper from './RegularWrapper'
 import DiagonalArrow from './DiagonalArrow'
 
-export default function ReviewForm({ onSubmit }) {
-  // State variables to store form data
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [rating, setRating] = useState('')
-  const [comment, setComment] = useState('')
+const ReviewForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    rating: '',
+    comment: '',
+  })
   const [loading, setLoading] = useState(false)
+
+  // Generic change handler for all input fields
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: name === 'rating' ? parseInt(value) : value,
+    }))
+  }
 
   const createReview = async (e) => {
     e.preventDefault()
     setLoading(true)
     try {
-      const body = { name, email, rating, comment }
       await fetch('api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify(formData),
       })
-      // Reset form fields
-      setName('')
-      setEmail('')
-      setRating('')
-      setComment('')
-      setLoading(false)
+      setFormData({ name: '', email: '', rating: '', comment: '' })
       toast.success('Thanks for your feedback. Review submitted successfully.', {
         theme: 'dark',
       })
     } catch (error) {
       console.error(error)
-      setLoading(false)
       toast.error(
         'There was an error submitting your review. Please try again.',
         {
           theme: 'dark',
         }
       )
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -55,55 +58,65 @@ export default function ReviewForm({ onSubmit }) {
         name="name"
         type="text"
         label="Name"
-        value={name}
+        value={formData.name}
         placeholder="Enter your name"
-        onChange={(e) => setName(e.target.value)}
+        onChange={handleChange}
       />
       <RegularWrapper
         name="email"
         type="email"
         label="Email"
-        value={email}
+        value={formData.email}
         placeholder="Enter your email"
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleChange}
       />
       <RegularWrapper
         name="rating"
         type="number"
         label="Rating"
-        value={rating}
+        value={formData.rating}
         placeholder="Enter rating (1-5)"
-        onChange={(e) => setRating(parseInt(e.target.value))}
+        onChange={handleChange}
       />
       <RegularWrapper
         name="comment"
         type="textarea"
         label="Comment"
-        value={comment}
+        value={formData.comment}
         placeholder="Write your review here"
-        onChange={(e) => setComment(e.target.value)}
+        onChange={handleChange}
       />
-      <button
-        type="submit"
-        className={`w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
-          loading ? 'opacity-50 cursor-not-allowed' : ''
-        }`}
-        disabled={loading}
-      >
-        {loading ? (
-          <>
-            <div className="w-6 h-6 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
-            <p>submitting review</p>
-          </>
-        ) : (
-          <>
-            <p className="text-white">Submit your review</p>
-            <div className="w-6 aspect-square">
-              <DiagonalArrow />
-            </div>
-          </>
-        )}
-      </button>
+      <SubmitButton loading={loading} />
     </form>
   )
 }
+
+const SubmitButton = ({ loading }) => (
+  <button
+    type="submit"
+    className={`w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
+      loading ? 'opacity-50 cursor-not-allowed' : ''
+    }`}
+    disabled={loading}
+  >
+    {loading ? (
+      <>
+        <LoadingSpinner />
+        <p>submitting review</p>
+      </>
+    ) : (
+      <>
+        <p className="text-white">Submit your review</p>
+        <div className="w-6 aspect-square">
+          <DiagonalArrow />
+        </div>
+      </>
+    )}
+  </button>
+)
+
+const LoadingSpinner = () => (
+  <div className="w-6 h-6 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+)
+
+export default ReviewForm
