@@ -1,3 +1,5 @@
+// Code to handle POST requests to create a new review (route.js)
+
 import prisma from "@/lib/prisma";
 
 export async function POST(req) {

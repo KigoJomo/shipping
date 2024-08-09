@@ -1,7 +1,11 @@
 import prisma from "@/lib/prisma";
 
 export default async function TestimonialList() {
-  const testimonials = await prisma.testimonial.findMany();
+  const testimonials = await prisma.testimonial.findMany({
+    orderBy:{
+      createdAt: 'desc',
+    },
+  });
 
   return (
     <div className="w-full h-full py-4 flex flex-col gap-4">

@@ -98,7 +98,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
         );
         setTimeout(() =>{
           onClose();
-        }, 2000)
+        }, 5000)
         event.target.reset();
       } else {
         toast.error("Something went wrong. Please try again.", {
@@ -173,11 +173,13 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
             name={"weight"}
             type={"number"}
             label={"Weight (kg) - Rate: $13/kg"}
+            max={999}
           />
           <RegularWrapper
             name={"cbm"}
             type={"number"}
             label={"CBM"}
+            max={999}
           />
           <RegularWrapper
             name={"phone"}
