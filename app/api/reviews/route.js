@@ -1,24 +1,18 @@
-// Code to handle POST requests to create a new review (route.js)
+// app/api/reviews/route.js
 
 import prisma from "@/lib/prisma";
 
-export async function POST(req) {
+export async function GET() {
   try {
-    const { name, email, rating, comment } = await req.json();
-
-    // Save the new review to the database
-    const newReview = await prisma.testimonial.create({
-      data: {
-        name,
-        email,
-        rating: parseInt(rating),
-        comment,
-      },
+    const data = await prisma.testimonial.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      }
     });
 
-    return new Response(JSON.stringify(newReview), { status: 201 });
+    return new Response(JSON.stringify(data), { status: 201 });
   } catch (error) {
-    return new Response(JSON.stringify({ error: "Failed to create review" }), {
+    return new Response(JSON.stringify({ error: "Failed to fetch reviews" }), {
       status: 500,
     });
   }

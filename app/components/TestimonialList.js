@@ -1,15 +1,9 @@
-import prisma from "@/lib/prisma";
-
-export default async function TestimonialList() {
-  const testimonials = await prisma.testimonial.findMany({
-    orderBy:{
-      createdAt: 'desc',
-    },
-  });
+// TestimonialList.js
+export default function TestimonialList({reviews}) {
 
   return (
     <div className="w-full h-full py-4 flex flex-col gap-4">
-      {testimonials.map((testimonial) => (
+      {reviews.map((testimonial) => (
         <div key={testimonial.id} className="p-4 border rounded-3xl shadow">
           <div className="flex justify-between items-center">
             <h4 className="font-bold capitalize">{testimonial.name}</h4>

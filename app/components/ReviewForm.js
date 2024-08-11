@@ -1,3 +1,4 @@
+// ReviewForm.js
 'use client'
 
 import { useState } from 'react'
@@ -5,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import RegularWrapper from './RegularWrapper'
 import DiagonalArrow from './DiagonalArrow'
 
-const ReviewForm = () => {
+const ReviewForm = ({onNewReview}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,11 +28,15 @@ const ReviewForm = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      await fetch('api/reviews', {
+      const response = await fetch('api/newReview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
+
+      const newReview = await response.json();
+      onNewReview(newReview);
+
       setFormData({ name: '', email: '', rating: '', comment: '' })
       toast.success('Thanks for your feedback. Review submitted successfully.', {
         theme: 'dark',
