@@ -6,8 +6,8 @@
   --primary: #192f3b;
   --primary-dark: #071d22;
   --primary-light: #3b3b3b;
-  --secondary: #ec6c06;
-  --secondary-dark: #b15c16;
+  --secondary: #ff8826;
+  --secondary-dark: #d46000;
   --tertiary: #8b969c;
   --white: #ffffff;
   --white-dark: #c0c0c0;
@@ -324,7 +324,7 @@ html {
 
     main {
       section {
-        scroll-snap-align: start;
+        // scroll-snap-align: start;
         flex-shrink: 0;
         height: 100dvh;
         width: 100dvw;

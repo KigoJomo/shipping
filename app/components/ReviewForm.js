@@ -6,7 +6,21 @@ import { ToastContainer, toast } from 'react-toastify'
 import RegularWrapper from './RegularWrapper'
 import DiagonalArrow from './DiagonalArrow'
 
-const ReviewForm = ({onNewReview}) => {
+const RatingButton = ({ index, active, onClick }) => {
+  return (
+    <button
+      type="button"
+      className={`text-4xl ${
+        active ? 'text-secondary hover:text-secondary-dark' : 'text-tertiary hover:text-white'
+      }`}
+      onClick={() => onClick(index)}
+    >
+      ★
+    </button>
+  )
+}
+
+const ReviewForm = ({ onNewReview }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +28,14 @@ const ReviewForm = ({onNewReview}) => {
     comment: '',
   })
   const [loading, setLoading] = useState(false)
+
+  const handleRatingClick = (index) => {
+    setFormData((prevData) => ({ ...prevData, rating: index }))
+  }
+
+  const clearRating = () => {
+    setFormData((prevData) => ({ ...prevData, rating: 0 }))
+  }
 
   // Generic change handler for all input fields
   const handleChange = (e) => {
@@ -34,13 +56,16 @@ const ReviewForm = ({onNewReview}) => {
         body: JSON.stringify(formData),
       })
 
-      const newReview = await response.json();
-      onNewReview(newReview);
+      const newReview = await response.json()
+      onNewReview(newReview)
 
       setFormData({ name: '', email: '', rating: '', comment: '' })
-      toast.success('Thanks for your feedback. Review submitted successfully.', {
-        theme: 'dark',
-      })
+      toast.success(
+        'Thanks for your feedback. Review submitted successfully.',
+        {
+          theme: 'dark',
+        }
+      )
     } catch (error) {
       console.error(error)
       toast.error(
@@ -75,20 +100,38 @@ const ReviewForm = ({onNewReview}) => {
         placeholder="Enter your email"
         onChange={handleChange}
       />
-      <RegularWrapper
-        name="rating"
-        type="number"
-        label="Rating"
-        value={formData.rating}
-        placeholder="Enter rating (1-5)"
-        onChange={handleChange}
-      />
+      <div className="rating flex flex-col w-full">
+        <p className="text-xs md:text-base capitalize font-light text-white-dark">
+          how would you rate our services?
+        </p>
+        <div className="rating-container w-full flex items-center justify-between">
+          <div className="stars flex items-center gap-2">
+            {[1, 2, 3, 4, 5].map((index) => (
+              <RatingButton
+                key={index}
+                index={index}
+                active={index <= formData.rating}
+                onClick={handleRatingClick}
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            className="text-xs md:text-base capitalize font-light text-tertiary hover:text-white underline"
+            onClick={clearRating}
+          >
+            clear
+          </button>
+        </div>
+        {/* when a user clicks on a star, that star and the ones before it should change color to secondary */}
+        {/* clicking the clear button resets the rating to 0 */}
+      </div>
       <RegularWrapper
         name="comment"
         type="textarea"
         label="Comment"
         value={formData.comment}
-        placeholder="Write your review here"
+        placeholder="What do you think about Consol Cargo's services?"
         onChange={handleChange}
       />
       <SubmitButton loading={loading} />

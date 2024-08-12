@@ -5,7 +5,7 @@ const RegularWrapper = ({ name, type, label, options, onChange, placeholder, min
     <div className="fieldwrapper w-full flex flex-col gap-2 md:gap-1">
       <label
         htmlFor={name}
-        className="text-xs md:text-base capitalize font-light text-tertiary"
+        className="text-xs md:text-base capitalize font-light text-white-dark"
       >
         {label}
       </label>
