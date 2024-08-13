@@ -308,23 +308,23 @@ img {
 
 html {
   height: 100dvh;
-  width: 100dvw;
+  width: 100vw;
   overflow: hidden;
 
   body {
     height: 100dvh;
-    width: 100dvw;
-    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+    overflow-y: scroll;
     &::-webkit-scrollbar {
       display: none;
     }
 
     background: var(--primary);
-    scroll-snap-type: y mandatory;
 
     main {
       section {
-        // scroll-snap-align: start;
         flex-shrink: 0;
         height: 100dvh;
         width: 100dvw;

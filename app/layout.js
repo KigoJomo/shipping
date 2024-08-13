@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="flex flex-col items-center relative scroll-smooth">
+      <body className="flex flex-col items-center relative overflow-x-hidden">
         {children}
         <svg
           style={{ visibility: "hidden", position: "absolute" }}

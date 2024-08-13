@@ -1,7 +1,6 @@
 const DiagonalArrow = () => {
     return (
       <svg
-        // className=""
         width="100%"
         height="100%"
         viewBox="0 0 82 82"
