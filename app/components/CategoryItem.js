@@ -17,7 +17,7 @@ const CategoryItem = ({ title, AnimatedComponent, description, bgColor, onClick 
         <p className="w-4/5 md:w-3/5 text-right md:text-left text-white text-xs md:text-sm">
           {description}
         </p>
-        <button className="w-10 md:w-12 md:hover:w-14 aspect-square" onClick={onClick}>
+        <button className="w-10 md:w-12 md:hover:w-14 aspect-square" onClick={onClick} id={`${title}-shipping-button`}>
           <DiagonalArrow />
         </button>
       </div>

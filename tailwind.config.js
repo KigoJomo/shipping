@@ -15,8 +15,8 @@ module.exports = {
       colors: {
         primary: "#192F3B", // Background
         "primary-dark": "#071D22", // Dark Background
-        secondary: "#ff8826", // Orange Accent
-        "secondary-dark": "#d46000",
+        secondary: "var(--secondary)", // Orange Accent
+        "secondary-dark": "var(--secondary-dark)",
         tertiary: "#8B969C", // Light Gray
         white: "#FFFFFF", // White
         "white-dark": "#c0c0c0", // White

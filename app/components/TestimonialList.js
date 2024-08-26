@@ -8,7 +8,7 @@ export default function TestimonialList({reviews}) {
       {reviews?.map((testimonial) => (
         <ScrollAnimationWrapper variant="fadeIn" duration={2} key={testimonial.id} className="w-full md:w-1/4 p-4 border rounded-2xl shadow md:hover:bg-primary-dark flex flex-col gap-4">
           <div className="flex justify-between items-center">
-            <h4 className="font-bold capitalize">{testimonial.name}</h4>
+            <h3 className="font-bold text-base capitalize">{testimonial.name}</h3>
             <span className="star text-secondary">{"★".repeat(testimonial.rating)}</span>
           </div>
           <p className="max-w-full text-sm md:text-base">{testimonial.comment}</p>

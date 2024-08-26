@@ -1,7 +1,7 @@
-import Image from "next/image";
-import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
-import DiagonalArrow from "./DiagonalArrow";
-import TypewriterComponent from "./TypewriterComponent";
+import Image from 'next/image'
+import ScrollAnimationWrapper from './ScrollAnimationWrapper'
+import DiagonalArrow from './DiagonalArrow'
+import TypewriterComponent from './TypewriterComponent'
 
 const Hero = () => {
   return (
@@ -13,8 +13,8 @@ const Hero = () => {
         <div className="left-top w-full h-[50vh] flex flex-col gap-4">
           <h2 className="text-tertiary">Consol cargo</h2>
           <TypewriterComponent
-            textLevel={"h2"}
-            text={"Your partner in global shipping solutions"}
+            textLevel={'h2'}
+            text={'Your partner in global shipping solutions'}
           />
         </div>
         <div className="w-full h-1/2 flex justify-center gap-6 md:gap-0 md:justify-between pt-4 md:p-0">
@@ -23,7 +23,7 @@ const Hero = () => {
             className="h-full aspect-[9/16] overflow-hidden rounded-full border-8 hover:border-2 border-secondary"
           >
             <Image
-              src={"/images/shipping.webp"}
+              src={'/images/shipping.webp'}
               alt="consol cargo shipping"
               height={300}
               width={300}
@@ -39,7 +39,11 @@ const Hero = () => {
               services by air, sea and land. Each of your shipment will be
               handled with big care
             </p>
-            <a href="#categories" className="w-14 md:w-24 aspect-square transform rotate-180 md:rotate-90">
+            <a
+              aria-label="scroll to categories"
+              href="#categories"
+              className="w-14 md:w-24 aspect-square transform rotate-180 md:rotate-90"
+            >
               <DiagonalArrow />
             </a>
           </ScrollAnimationWrapper>
@@ -54,31 +58,34 @@ const Hero = () => {
               alt="consol cargo air shipping"
               width={1000}
               height={1000}
+              quality={75}
               className="hero-clipped"
             />
           </div>
           <div className="image absolute w-[38%] h-[28%] top-0 left-0">
             <Image
-              src={"/images/shipping_sea.webp"}
+              src={'/images/shipping_sea.webp'}
               alt="consol cargo sea shipping"
               width={1000}
               height={1000}
+              quality={75}
               className=""
             />
           </div>
           <div className="image absolute w-[53%] h-[28%] bottom-0 right-0">
             <Image
-              src={"/images/shipping_land.webp"}
+              src={'/images/shipping_land.webp'}
               alt="consol cargo land shipping"
               width={1000}
               height={1000}
+              quality={75}
               className=""
             />
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

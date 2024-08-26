@@ -172,6 +172,8 @@ const ReviewForm = ({ onNewReview }) => {
 
 const SubmitButton = ({ loading }) => (
   <button
+    id="submit-review"
+    aria-label="Submit Review"
     type="submit"
     className={`h-10 w-10 md:h-16 md:w-16 capitalize flex items-center justify-center rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
       loading ? 'opacity-50 cursor-not-allowed' : ''

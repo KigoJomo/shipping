@@ -7,8 +7,8 @@
   --primary: #192f3b;
   --primary-dark: #071d22;
   --primary-light: #3b3b3b;
-  --secondary: #ff8826;
-  --secondary-dark: #d46000;
+  --secondary: #B16120;
+  --secondary-dark: #8b4d1a;
   --tertiary: #8b969c;
   --white: #ffffff;
   --white-dark: #c0c0c0;
@@ -94,6 +94,7 @@ img {
 .rotate-y {
   transform-style: preserve-3d;
   box-shadow: 0px 0px 50px 0px rgba(24, 24, 24, 0.2);
+  /* // transform:; */
 }
 .rotate-y * {
   transform-style: preserve-3d;
