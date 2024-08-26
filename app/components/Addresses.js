@@ -3,18 +3,18 @@ import PhysicalAddress from "./PhysicalAddress";
 const shippingLocations = [
   {
     city: "Nairobi",
-    address: "123 Shipping Lane, Nairobi, Kenya",
-    phone_number: "+254 (794) 898678",
+    address: "Kalson Towers, Westlands, Nairobi,Kenya",
+    phone_number: "+254 (794) 898 678",
   },
   {
     city: "London",
-    address: "456 Cargo Street, London, UK",
-    phone_number: "+44 20 1234 5678",
+    address: "coming soon",
+    phone_number: " ",
   },
   {
     city: "New York",
-    address: "789 Freight Avenue, New York, USA",
-    phone_number: "+1 212-555-1234",
+    address: "coming soon",
+    phone_number: " ",
   },
 ];
 

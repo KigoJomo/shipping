@@ -1,8 +1,14 @@
 // components/CategoryItem.js
-import DiagonalArrow from "./DiagonalArrow";
-import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
+import DiagonalArrow from './DiagonalArrow'
+import ScrollAnimationWrapper from './ScrollAnimationWrapper'
 
-const CategoryItem = ({ title, AnimatedComponent, description, bgColor, onClick }) => {
+const CategoryItem = ({
+  title,
+  AnimatedComponent,
+  description,
+  bgColor,
+  onClick,
+}) => {
   return (
     <ScrollAnimationWrapper
       variant="fadeIn"
@@ -17,12 +23,17 @@ const CategoryItem = ({ title, AnimatedComponent, description, bgColor, onClick 
         <p className="w-4/5 md:w-3/5 text-right md:text-left text-white text-xs md:text-sm">
           {description}
         </p>
-        <button className="w-10 md:w-12 md:hover:w-14 aspect-square" onClick={onClick} id={`${title}-shipping-button`}>
+        <button
+          className="w-10 md:w-12 md:hover:w-14 aspect-square"
+          onClick={onClick}
+          id={`${title}-shipping-button`}
+          aria-label={`${title}-shipping-button`}
+        >
           <DiagonalArrow />
         </button>
       </div>
     </ScrollAnimationWrapper>
-  );
-};
+  )
+}
 
-export default CategoryItem;
+export default CategoryItem
