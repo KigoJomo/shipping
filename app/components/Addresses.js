@@ -4,7 +4,7 @@ const shippingLocations = [
   {
     city: "Nairobi",
     address: "Kalson Towers, Westlands, Nairobi,Kenya",
-    phone_number: "+254 (794) 898 678",
+    phone_number: "+254 727 905 390",
   },
   {
     city: "London",
