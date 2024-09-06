@@ -1,6 +1,17 @@
 // layout.js
 import "./globals.css";
 
+import localFont from 'next/font/local'
+
+export const helvetica = localFont({
+  src: [
+    {
+      path: "../public/fonts/HelveticaNeueHeavyItalic.otf",
+    }
+  ],
+  variable: '--font-helvetica',
+})
+
 export const metadata = {
   title: "Consol Cargo",
   description: "Consolidation, clearing & forwarding",

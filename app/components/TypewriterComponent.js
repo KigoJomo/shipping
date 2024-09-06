@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import Typewriter from "typewriter-effect/dist/core";
 import React from "react";
 
-const TypewriterComponent = ({ textLevel = "p", text }) => {
+const TypewriterComponent = ({ textLevel = "p", text, className }) => {
   const typewriterRef = useRef(null);
 
   const stringText = text.toString();
@@ -20,7 +20,7 @@ const TypewriterComponent = ({ textLevel = "p", text }) => {
   // Create the element dynamically
   return React.createElement(
     textLevel,
-    { ref: typewriterRef },
+    { ref: typewriterRef, className: className },
     ""
   );
 };
