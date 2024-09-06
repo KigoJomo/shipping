@@ -10,16 +10,27 @@ const Hero = () => {
       id="hero"
       className="flex flex-col md:flex-row items-center p-0 overflow-y-scroll md:overflow-hidden"
     >
-      <div className="hero-left w-full md:w-1/2 h-screen flex flex-col justify-between px-4 md:px-12 2xl:pl-40 pt-28 pb-16">
+      <div className="hero-left w-full md:w-1/2 h-screen flex flex-col justify-between px-4 md:px-12 2xl:pl-40 pt-28 pb-16 relative">
+        <Image
+          alt=""
+          src="/logo-emblem.webp"
+          width={750}
+          height={750}
+          className="absolute hidden md:block left-[50%] translate-x-[-50%] w-[80%] z-[-30] opacity-10 "
+        />
+
         <div className="left-top w-full h-[50vh] flex flex-col gap-4 md:pt-9">
-          <h1 className={`helvetica uppercase tracking-tighter text-4xl md:text-7xl`}>Consol<span className='text-tertiary helvetica'>cargo</span></h1>
+          <h1
+            className={`helvetica uppercase tracking-tighter text-4xl md:text-7xl`}
+          >
+            Consol<span className="text-tertiary helvetica">cargo</span>
+          </h1>
 
           <TypewriterComponent
             textLevel={'h3'}
             text={'Your partner in global shipping solutions'}
             className={'text-3xl md:text-2xl'}
           />
-          
         </div>
         <div className="w-full h-1/2 flex justify-center gap-6 md:gap-0 md:justify-between pt-4 md:p-0">
           <ScrollAnimationWrapper
