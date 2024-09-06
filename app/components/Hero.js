@@ -12,7 +12,7 @@ const Hero = () => {
     >
       <div className="hero-left w-full md:w-1/2 h-screen flex flex-col justify-between px-4 md:px-12 2xl:pl-40 pt-28 pb-16">
         <div className="left-top w-full h-[50vh] flex flex-col gap-4 md:pt-9">
-          <h1 className={`helvetica uppercase text-4xl md:text-7xl`}>Consol<span className='text-tertiary helvetica'>cargo</span></h1>
+          <h1 className={`helvetica uppercase tracking-tighter text-4xl md:text-7xl`}>Consol<span className='text-tertiary helvetica'>cargo</span></h1>
 
           <TypewriterComponent
             textLevel={'h3'}
