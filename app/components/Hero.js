@@ -4,14 +4,19 @@ import ScrollAnimationWrapper from './ScrollAnimationWrapper'
 import DiagonalArrow from './DiagonalArrow'
 import TypewriterComponent from './TypewriterComponent'
 import ShippingImages from './ShippingImages'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(/Android/i.test(navigator.userAgent))
+  }, [])
 
   return (
     <section
       id="hero"
-      className={`h-fit flex flex-col md:flex-row ${/Android/i.test(navigator.userAgent) ? 'flex-wrap': ''} items-center gap-0 p-0 md:overflow-hidden`}
+      className={`h-fit flex flex-col md:flex-row ${isMobile ? 'flex-wrap': ''} items-center gap-0 p-0 md:overflow-hidden`}
     >
       <div className="hero-left w-full flex flex-col justify-between gap-8 md:gap-0 px-4 md:px-12 2xl:pl-40 pt-28 pb-16 relative">
         <div className="left-top w-full md:h-[50vh] flex flex-col gap-[10%] md:gap-4 justify-center relative">
