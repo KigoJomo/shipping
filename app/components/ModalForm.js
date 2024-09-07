@@ -181,7 +181,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
           <RegularWrapper
             name={"cbm"}
             type={"number"}
-            label={"CBM"}
+            label={"CBM (Size in  cubic metres)"}
             max={999}
           />
           <RegularWrapper
