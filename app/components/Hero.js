@@ -7,9 +7,6 @@ import ShippingImages from './ShippingImages'
 import { useEffect } from 'react'
 
 const Hero = () => {
-  useEffect(() =>{
-    const mobile = window.matchMedia('(orientation: portrait)')
-  })
 
   return (
     <section
