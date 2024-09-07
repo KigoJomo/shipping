@@ -6,17 +6,8 @@ import ReviewForm from './ReviewForm'
 import TestimonialList from './TestimonialList'
 import ScrollAnimationWrapper from './ScrollAnimationWrapper'
 
-const sampleReviews = [
-  {
-    id: 1,
-    name: 'John Doe',
-    rating: 5,
-    comment: 'This product is amazing! It has exceeded my expectations.',
-  },
-]
-
 const Testimonials = () => {
-  const [reviews, setReviews] = useState([sampleReviews])
+  const [reviews, setReviews] = useState([])
 
   const fetchReviews = async () => {
     try {

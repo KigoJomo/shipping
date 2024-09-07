@@ -1,16 +1,22 @@
+'use client'
 import Image from 'next/image'
 import ScrollAnimationWrapper from './ScrollAnimationWrapper'
 import DiagonalArrow from './DiagonalArrow'
 import TypewriterComponent from './TypewriterComponent'
-import { helvetica } from '../layout'
+import ShippingImages from './ShippingImages'
+import { useEffect } from 'react'
 
 const Hero = () => {
+  useEffect(() =>{
+    const mobile = window.matchMedia('(orientation: portrait)')
+  })
+
   return (
     <section
       id="hero"
-      className="h-fit flex flex-col md:flex-row items-center gap-0 p-0 md:overflow-hidden"
+      className={`h-fit flex flex-col md:flex-row ${/Android/i.test(navigator.userAgent) ? 'flex-wrap': ''} items-center gap-0 p-0 md:overflow-hidden`}
     >
-      <div className="hero-left w-full md:w-1/2 flex flex-col justify-between gap-8 md:gap-0 px-4 md:px-12 2xl:pl-40 pt-28 pb-16 relative">
+      <div className="hero-left w-full flex flex-col justify-between gap-8 md:gap-0 px-4 md:px-12 2xl:pl-40 pt-28 pb-16 relative">
         <div className="left-top w-full md:h-[50vh] flex flex-col gap-[10%] md:gap-4 justify-center relative">
           <Image
             alt=""
@@ -48,7 +54,7 @@ const Hero = () => {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper
             variant="slideInBottom"
-            className="h-full w-1/2 flex flex-col items-end justify-between"
+            className="h-full md:w-1/2 flex flex-col items-end justify-between"
           >
             <p>
               Consol Cargo offers a wide range of different products and
@@ -66,40 +72,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero-right w-full md:w-1/2 md:h-full flex flex-col px-4 pb-4 md:pt-28 md:pb-12 md:px-12 2xl:pr-40">
-        <div className="w-full h-full relative">
-          <div className="main-image image w-full h-[50vh] md:h-full">
-            <Image
-              src="/images/shipping_air.webp"
-              alt="consol cargo air shipping"
-              width={1000}
-              height={1000}
-              quality={75}
-              className="hero-clipped"
-            />
-          </div>
-          <div className="image absolute w-[38%] h-[28%] top-0 left-0">
-            <Image
-              src={'/images/shipping_sea.webp'}
-              alt="consol cargo sea shipping"
-              width={1000}
-              height={1000}
-              quality={75}
-              className=""
-            />
-          </div>
-          <div className="image absolute w-[53%] h-[28%] bottom-0 right-0">
-            <Image
-              src={'/images/shipping_land.webp'}
-              alt="consol cargo land shipping"
-              width={1000}
-              height={1000}
-              quality={75}
-              className=""
-            />
-          </div>
-        </div>
-      </div>
+      <ShippingImages/>
     </section>
   )
 }
