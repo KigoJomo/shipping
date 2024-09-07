@@ -7,12 +7,12 @@ const shippingLocations = [
     phone_number: "+254 727 905 390",
   },
   {
-    city: "London",
+    city: "Kampala",
     address: "coming soon",
     phone_number: " ",
   },
   {
-    city: "New York",
+    city: "Kigali",
     address: "coming soon",
     phone_number: " ",
   },

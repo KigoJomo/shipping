@@ -22,7 +22,7 @@ export default function Home() {
       <ClientWrapper>
         <Header />
       </ClientWrapper>
-      <main className="w-full overflow-x-hidden flex flex-col gap-8">
+      <main className="w-full h-fit overflow-x-hidden flex flex-col gap-8">
         <Hero />
         <Categories />
         <Procedure />

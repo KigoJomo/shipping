@@ -50,14 +50,17 @@ const CategorySelect = ({
 };
 
 const FreightOptions = ["air", "sea", "road/rail"];
-const countries = ["Kenya", "South Africa", "China", "US", "UK"];
+
 const cities = [
   { country: "Kenya", cities: ["Nairobi", "Mombasa", "Kisumu"] },
-  { country: "South Africa", cities: ["Cape Town", "Johannesburg", "Durban"] },
-  { country: "China", cities: ["Beijing", "Shanghai", "Guangzhou"] },
-  { country: "US", cities: ["New York", "Los Angeles", "Chicago"] },
-  { country: "UK", cities: ["London", "Manchester", "Birmingham"] },
+  { country: "Uganda", cities: ["Kampala"] },
+  { country: "Tanzania", cities: ["Dar es Salaam"] },
+  { country: "Rwanda", cities: ["Kigali"] },
+  { country: "Burundi", cities: ["Bujumbura"] },
+  { country: "South Sudan", cities: ["Juba"] }
 ];
+const countries = cities.map((country) => country.country);
+
 
 const ModalForm = ({ isOpen, onClose, freightOption }) => {
   const [loading, setLoading] = useState(false);

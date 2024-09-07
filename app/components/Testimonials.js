@@ -6,8 +6,17 @@ import ReviewForm from './ReviewForm'
 import TestimonialList from './TestimonialList'
 import ScrollAnimationWrapper from './ScrollAnimationWrapper'
 
+const sampleReviews = [
+  {
+    id: 1,
+    name: 'John Doe',
+    rating: 5,
+    comment: 'This product is amazing! It has exceeded my expectations.',
+  },
+]
+
 const Testimonials = () => {
-  const [reviews, setReviews] = useState([])
+  const [reviews, setReviews] = useState([sampleReviews])
 
   const fetchReviews = async () => {
     try {
@@ -35,15 +44,17 @@ const Testimonials = () => {
       <h2 className="flex-shrink-0">Reviews</h2>
 
       <div className="w-full overflow-x-hidden h-full flex flex-col items-center gap-0">
-
-        <ScrollAnimationWrapper variant="fadeIn" duration={2.5} className="w-full overflow-x-hidden md:w-1/2 h-auto flex-shrink-0 flex flex-col items-center justify-center">
+        <ScrollAnimationWrapper
+          variant="fadeIn"
+          duration={2.5}
+          className="w-full overflow-x-hidden md:w-1/2 h-auto flex-shrink-0 flex flex-col items-center justify-center"
+        >
           <ReviewForm onNewReview={handleNewReview} />
         </ScrollAnimationWrapper>
 
         <div className="w-full h-auto md:h-full flex flex-col items-center justify-start md:pr-9 pt-6 overflow-hidden">
           <TestimonialList reviews={reviews} />
         </div>
-
       </div>
     </section>
   )
