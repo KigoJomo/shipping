@@ -38,7 +38,7 @@ const ShippingImages = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center px-4 pb-4 md:pt-28 md:pb-12 md:px-12 2xl:pr-40">
+    <div className="w-full flex flex-col items-center border max-h-64">
       <Slider {...settings}>
         {images.map((image, index) => (
           <ImageSlide key={index} src={image.src} alt={image.alt} />

@@ -1,4 +1,3 @@
-'use client'
 import Image from 'next/image'
 import ScrollAnimationWrapper from './ScrollAnimationWrapper'
 import DiagonalArrow from './DiagonalArrow'
@@ -10,9 +9,9 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className={`h-fit flex flex-col items-center gap-0 p-4 md:px-12`}
+      className={`h-fit flex flex-col items-center gap-8 p-4 md:px-12`}
     >
-      <div className="hero-top w-full flex flex-col gap-8 md:gap-6">
+      <div className="hero-top border w-full flex flex-col gap-8 md:gap-6">
         <div className="w-full h-fit py-8 flex flex-col justify-center gap-8 relative">
           <Image
             alt=""
