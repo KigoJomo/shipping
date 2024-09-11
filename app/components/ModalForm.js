@@ -63,13 +63,12 @@ const destinationCountries = [
   'DRC',
 ]
 
-const specialOptions = ['fragile', 'flammable']
+const specialOptions = ['Fragile', 'Flammable']
 
 const ModalForm = ({ isOpen, onClose, freightOption }) => {
   const [loading, setLoading] = useState(false)
   const [currentFreightOption, setCurrentFreightOption] = useState('')
   const [packageCategory, setPackageCategory] = useState('General')
-  const [destinationCountry, setDestinationCountry] = useState(destinationCountries[0])
   const [specialOption, setSpecialOption] = useState('')
 
   useEffect(() => {
