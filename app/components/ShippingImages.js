@@ -35,7 +35,7 @@ const ShippingImages = () => {
   ]
 
   return (
-    <div className="w-full md:px-12 rounded-[3rem] overflow-hidden">
+    <div className="w-full md:px-12 rounded-[1.5rem] overflow-hidden">
       <Slider {...settings}>
         {images.map((image, index) => (
           <ImageSlide key={index} src={image.src} alt={image.alt} />

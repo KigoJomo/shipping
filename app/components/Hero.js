@@ -9,16 +9,16 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className={`h-fit flex flex-col items-center gap-24 p-4 md:px-12`}
+      className={`h-fit flex flex-col items-center gap-8 md:gap-24 p-4 md:px-12`}
     >
       <div className="hero-top w-full flex flex-col gap-8 md:gap-6">
         <div className="w-full h-fit py-8 flex flex-col justify-center gap-8 relative">
           <Image
             alt=""
             src="/logo-emblem.webp"
-            width={750}
-            height={750}
-            className="absolute right-[50%] translate-x-[50%] md:right-0 md:translate-x-0 md:top-0 w-full md:w-[80%] max-w[80vw] z-[-30] opacity-10 "
+            width={500}
+            height={500}
+            className="absolute right-[50%] translate-x-[50%] md:top-0 w-4/5 object-contain md:w-[80%] max-w[80vw] z-[-30] opacity-10 "
           />
 
           <h1
@@ -34,7 +34,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="w-full h-fit flex items-end justify-between md:justify-start md:gap-8 pt-4 md:p-0">
+        {/* <div className="w-full h-fit flex items-end justify-between md:justify-start md:gap-8 pt-4 md:p-0">
 
           <ScrollAnimationWrapper
             variant="slideInBottom"
@@ -67,7 +67,7 @@ const Hero = () => {
               className="h-full w-full"
             />
           </ScrollAnimationWrapper>
-        </div>
+        </div> */}
       </div>
 
       <ShippingImages />
