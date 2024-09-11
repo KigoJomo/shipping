@@ -34,7 +34,7 @@ const ScrollAnimationWrapper = ({ children, variant, className, duration = 1 }) 
       whileInView="visible"
       viewport={{ once: false }}
       variants={variants[variant]}
-      className={className}
+      className={`ease-out ${className}`}
     >
       {children}
     </motion.div>
