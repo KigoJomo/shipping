@@ -51,23 +51,26 @@ const CategorySelect = ({
 
 const FreightOptions = ['air', 'sea', 'road']
 
-const cities = [
-  { country: 'Kenya', cities: ['Nairobi', 'Mombasa', 'Kisumu'] },
-  { country: 'Uganda', cities: ['Kampala'] },
-  { country: 'Tanzania', cities: ['Dar es Salaam'] },
-  { country: 'Rwanda', cities: ['Kigali'] },
-  { country: 'Burundi', cities: ['Bujumbura'] },
-  { country: 'South Sudan', cities: ['Juba'] },
+const originCountries = ['Kenya', 'US', 'China', 'UK']
+const destinationCountries = [
+  ...originCountries,
+  'Uganda',
+  'Tanzania',
+  'Rwanda',
+  'Burundi',
+  'South Sudan',
+  'Somalia',
+  'DRC',
 ]
-const countries = cities.map((country) => country.country)
+
+const specialOptions = ['fragile', 'flammable']
 
 const ModalForm = ({ isOpen, onClose, freightOption }) => {
   const [loading, setLoading] = useState(false)
   const [currentFreightOption, setCurrentFreightOption] = useState('')
-  const [destinationCountry, setDestinationCountry] = useState(countries[0])
-  const handleCountryChange = (event) => {
-    setDestinationCountry(event.target.value)
-  }
+  const [packageCategory, setPackageCategory] = useState('General')
+  const [destinationCountry, setDestinationCountry] = useState(destinationCountries[0])
+  const [specialOption, setSpecialOption] = useState('')
 
   useEffect(() => {
     if (isOpen) {
@@ -76,6 +79,8 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
     } else {
       document.body.style.overflow = 'auto'
       setCurrentFreightOption('')
+      setPackageCategory('General')
+      setSpecialOption('')
     }
   }, [freightOption, isOpen])
 
@@ -150,32 +155,37 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
           <RegularWrapper
             name={'origin-country'}
             type={'select'}
-            options={countries}
+            options={originCountries}
             label={'Country of Origin'}
           />
           <RegularWrapper
             name={'destination-country'}
             type={'select'}
-            options={countries}
+            options={destinationCountries}
             label={'Destination Country'}
-            onChange={handleCountryChange}
           />
-          <RegularWrapper
-            name={'city'}
-            type={'select'}
-            label={'City'}
-            options={
-              cities.filter(
-                (country) => country.country === destinationCountry
-              )[0].cities
-            }
-          />
+
           <RegularWrapper
             name={'package-category'}
             type={'select'}
             label={'Package Category'}
-            options={['General', 'Sensitive']}
+            options={['General', 'Special']}
+            selectedOption={packageCategory}
+            onChange={(e) => setPackageCategory(e.target.value)}
           />
+
+          {/* Conditional dropdown for special package */}
+          {packageCategory === 'Special' && (
+            <RegularWrapper
+              name={'special-option'}
+              type={'select'}
+              label={'Special Handling'}
+              options={specialOptions}
+              selectedOption={specialOption}
+              onChange={(e) => setSpecialOption(e.target.value)}
+            />
+          )}
+
           <RegularWrapper
             name={'weight'}
             type={'number'}
