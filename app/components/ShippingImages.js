@@ -1,51 +1,48 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import next from 'next'
 
 // Reusable ImageSlide component
 const ImageSlide = ({ src, alt }) => (
-  <div className="w-full aspect-video rounded-3xl overflow-hidden">
-    <Image
-      src={src}
-      alt={alt}
-      width={500}
-      height={500}
-      className="w-full"
-    />
+  <div className="w-full aspect-video md:aspect-[21/9] px-2 overflow-hidden">
+    <Image src={src} alt={alt} width={1000} height={1000} className="w-full rounded-3xl" />
   </div>
-);
+)
 
 const ShippingImages = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // adaptiveHeight: true,
-    // autoplay: true,
-    // autoplaySpeed: 4500,
-  };
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 4500,
+    prevArrow: null,
+    nextArrow: null,
+  }
 
   // Image data
   const images = [
-    { src: "/images/shipping_air.webp", alt: "consol cargo air shipping" },
-    { src: "/images/shipping_sea.webp", alt: "consol cargo sea shipping" },
-    { src: "/images/shipping_land.webp", alt: "consol cargo land shipping" },
-  ];
+    { src: '/images/shipping_air.webp', alt: 'consol cargo air shipping' },
+    { src: '/images/shipping_sea.webp', alt: 'consol cargo sea shipping' },
+    { src: '/images/shipping_land.webp', alt: 'consol cargo land shipping' },
+  ]
 
   return (
-    <div className="w-full h-64 flex flex-col items-center border">
+    <div className="w-full md:mt-16 md:px-12">
       <Slider {...settings}>
         {images.map((image, index) => (
           <ImageSlide key={index} src={image.src} alt={image.alt} />
         ))}
       </Slider>
     </div>
-  );
+  )
 }
 
-export default ShippingImages;
+export default ShippingImages
