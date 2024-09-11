@@ -13,7 +13,7 @@ const ImageSlide = ({ src, alt }) => (
       alt={alt}
       width={500}
       height={500}
-      quality={75}
+      className="w-full"
     />
   </div>
 );
@@ -22,12 +22,12 @@ const ShippingImages = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 4500,
+    // adaptiveHeight: true,
+    // autoplay: true,
+    // autoplaySpeed: 4500,
   };
 
   // Image data
@@ -38,7 +38,7 @@ const ShippingImages = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center border max-h-64">
+    <div className="w-full h-64 flex flex-col items-center border">
       <Slider {...settings}>
         {images.map((image, index) => (
           <ImageSlide key={index} src={image.src} alt={image.alt} />

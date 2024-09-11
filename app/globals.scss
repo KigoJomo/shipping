@@ -81,12 +81,9 @@ input, textarea, select, option{
   filter: url(#round);
 }
 
-.image img {
+.image img, img {
   height: 100%;
   width: 100%;
-}
-
-img {
   object-fit: cover;
   object-position: center;
 }
