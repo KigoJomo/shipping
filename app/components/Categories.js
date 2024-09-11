@@ -7,7 +7,7 @@ import FlyingPlane from "./FlyingPlane";
 import LandShipping from "./LandShipping";
 import SailingShip from "./SailingShip";
 
-const FreightOptions = ["air", "sea", "road/rail"];
+const FreightOptions = ["air", "sea", "road"];
 
 const Categories = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -52,7 +52,7 @@ const Categories = () => {
         <CategoryItem
           title="Land"
           AnimatedComponent={LandShipping}
-          description="Convenient and flexible transportation of goods by road and rail."
+          description="Convenient and flexible transportation of goods by road."
           bgColor="bg-secondary"
           onClick={() => openModal(FreightOptions[2])}
         />

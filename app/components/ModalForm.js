@@ -1,28 +1,28 @@
-"use client";
-import { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import RegularWrapper from "./RegularWrapper";
-import DiagonalArrow from "./DiagonalArrow";
+'use client'
+import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import RegularWrapper from './RegularWrapper'
+import DiagonalArrow from './DiagonalArrow'
 
-const OptionButton = ({ text, active, onClick, type = "button" }) => {
+const OptionButton = ({ text, active, onClick, type = 'button' }) => {
   return (
     <button
       onClick={onClick}
       className={`px-4 md:px-10 py-1 md:py-2 rounded-md md:rounded-xl capitalize font-medium cursor-pointer text-nowrap text-xs md:text-base border ${
-        active ? "bg-secondary text-white border-transparent" : "bg-transparent"
+        active ? 'bg-secondary text-white border-transparent' : 'bg-transparent'
       }
       ${
-        type === "submit"
-          ? "hover:bg-primary hover:text-white hover:border-0"
-          : ""
+        type === 'submit'
+          ? 'hover:bg-primary hover:text-white hover:border-0'
+          : ''
       }}`}
       type={type}
     >
       {text}
     </button>
-  );
-};
+  )
+}
 
 const CategorySelect = ({
   label,
@@ -46,86 +46,85 @@ const CategorySelect = ({
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-const FreightOptions = ["air", "sea", "road/rail"];
+const FreightOptions = ['air', 'sea', 'road']
 
 const cities = [
-  { country: "Kenya", cities: ["Nairobi", "Mombasa", "Kisumu"] },
-  { country: "Uganda", cities: ["Kampala"] },
-  { country: "Tanzania", cities: ["Dar es Salaam"] },
-  { country: "Rwanda", cities: ["Kigali"] },
-  { country: "Burundi", cities: ["Bujumbura"] },
-  { country: "South Sudan", cities: ["Juba"] }
-];
-const countries = cities.map((country) => country.country);
-
+  { country: 'Kenya', cities: ['Nairobi', 'Mombasa', 'Kisumu'] },
+  { country: 'Uganda', cities: ['Kampala'] },
+  { country: 'Tanzania', cities: ['Dar es Salaam'] },
+  { country: 'Rwanda', cities: ['Kigali'] },
+  { country: 'Burundi', cities: ['Bujumbura'] },
+  { country: 'South Sudan', cities: ['Juba'] },
+]
+const countries = cities.map((country) => country.country)
 
 const ModalForm = ({ isOpen, onClose, freightOption }) => {
-  const [loading, setLoading] = useState(false);
-  const [currentFreightOption, setCurrentFreightOption] = useState("");
-  const [destinationCountry, setDestinationCountry] = useState(countries[0]);
+  const [loading, setLoading] = useState(false)
+  const [currentFreightOption, setCurrentFreightOption] = useState('')
+  const [destinationCountry, setDestinationCountry] = useState(countries[0])
   const handleCountryChange = (event) => {
-    setDestinationCountry(event.target.value);
-  };
+    setDestinationCountry(event.target.value)
+  }
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-      setCurrentFreightOption(freightOption);
+      document.body.style.overflow = 'hidden'
+      setCurrentFreightOption(freightOption)
     } else {
-      document.body.style.overflow = "auto";
-      setCurrentFreightOption("");
+      document.body.style.overflow = 'auto'
+      setCurrentFreightOption('')
     }
-  }, [freightOption, isOpen]);
+  }, [freightOption, isOpen])
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    setLoading(true);
-    const formData = new FormData(event.target);
+    event.preventDefault()
+    setLoading(true)
+    const formData = new FormData(event.target)
     try {
       const response = await fetch(event.target.action, {
         method: event.target.method,
         body: formData,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
         },
-      });
+      })
       if (response.ok) {
-        toast.success(
-          "Request submitted.  We'll contact you shortly.",
-          {
-            theme: "dark",
-          }
-        );
-        setTimeout(() =>{
-          onClose();
+        toast.success("Request submitted.  We'll contact you shortly.", {
+          theme: 'dark',
+        })
+        setTimeout(() => {
+          onClose()
         }, 5000)
-        event.target.reset();
+        event.target.reset()
       } else {
-        toast.error("Something went wrong. Please try again.", {
-          theme: "dark",
-        });
+        toast.error('Something went wrong. Please try again.', {
+          theme: 'dark',
+        })
       }
     } catch (error) {
       toast.error(
-        "There was an error sending your request. Please try again.",
+        'There was an error sending your request. Please try again.',
         {
-          theme: "dark",
+          theme: 'dark',
         }
-      );
+      )
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 transition-all duration-700">
       <div className="bg-primary border border-tertiary px-4 md:px-8 py-0 rounded-lg w-4/5 md:w-full h-4/5 md:h-[90%] max-w-lg relative flex flex-col gap-6">
-        <button className="absolute top-4 right-6 text-5xl font-thin" onClick={onClose}>
+        <button
+          className="absolute top-4 right-6 text-5xl font-thin"
+          onClick={onClose}
+        >
           &times;
         </button>
         <ToastContainer />
@@ -136,30 +135,35 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
           onSubmit={handleSubmit}
           className="w-full h-full flex flex-col gap-8 overflow-y-scroll scrollbar-themed md:pr-6 pb-6"
         >
-          <input type="hidden" name="freight-option" value={currentFreightOption} />
+          <input
+            type="hidden"
+            name="freight-option"
+            value={currentFreightOption}
+          />
+
           <CategorySelect
-            label={"Freight option"}
+            label={'Freight option'}
             options={FreightOptions}
             selectedOption={currentFreightOption}
             setSelectedOption={setCurrentFreightOption}
           />
           <RegularWrapper
-            name={"origin-country"}
-            type={"select"}
+            name={'origin-country'}
+            type={'select'}
             options={countries}
-            label={"Country of Origin"}
+            label={'Country of Origin'}
           />
           <RegularWrapper
-            name={"destination-country"}
-            type={"select"}
+            name={'destination-country'}
+            type={'select'}
             options={countries}
-            label={"Destination Country"}
+            label={'Destination Country'}
             onChange={handleCountryChange}
           />
           <RegularWrapper
-            name={"city"}
-            type={"select"}
-            label={"City"}
+            name={'city'}
+            type={'select'}
+            label={'City'}
             options={
               cities.filter(
                 (country) => country.country === destinationCountry
@@ -167,33 +171,29 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
             }
           />
           <RegularWrapper
-            name={"package-category"}
-            type={"select"}
-            label={"Package Category"}
-            options={["General", "Sensitive"]}
+            name={'package-category'}
+            type={'select'}
+            label={'Package Category'}
+            options={['General', 'Sensitive']}
           />
           <RegularWrapper
-            name={"weight"}
-            type={"number"}
-            label={"Weight (kg) - Rate: $13/kg"}
+            name={'weight'}
+            type={'number'}
+            label={'Weight (kg) - Rate: $13/kg'}
             max={999}
           />
           <RegularWrapper
-            name={"cbm"}
-            type={"number"}
-            label={"CBM (Size in  cubic metres)"}
-            max={999}
+            name={'phone'}
+            type={'tel'}
+            label={'Phone number'}
+            placeholder={'eg. +254 7XX XXX XXX'}
           />
-          <RegularWrapper
-            name={"phone"}
-            type={"tel"}
-            label={"Phone number"}
-            placeholder={"eg. +254 7XX XXX XXX"}
-          />
+          <RegularWrapper name={'email'} type={'email'} label={'Email'} />
+
           <button
             type="submit"
             className={`w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
+              loading ? 'opacity-50 cursor-not-allowed' : ''
             }`}
             disabled={loading}
           >
@@ -211,7 +211,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ModalForm;
+export default ModalForm
