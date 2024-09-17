@@ -20,11 +20,11 @@ const RegularWrapper = forwardRef(
   ) => {
     return (
       <div
-        className={`fieldwrapper w-full h-fit flex flex-col gap-2 md:gap-1 flex-shrink-0 ${className}`}
+        className={`fieldwrapper w-full h-fit flex flex-col gap-4 md:gap-4 flex-shrink-0 ${className}`}
       >
         <label
           htmlFor={name}
-          className="text-xs md:text-base capitalize font-light text-white-dark"
+          className="text-xs md:text-base capitalize font-light text-text-primary"
         >
           {label}
         </label>
@@ -39,7 +39,7 @@ const RegularWrapper = forwardRef(
             onChange={onChange}
             required
             ref={ref}
-            className="w-full h-6 border-0 border-b border-b-tertiary outline-none focus:outline-none focus:border-b-tertiary bg-transparent focus:bg-transparent placeholder:text-xs scrollbar-hidden text-nowrap"
+            className="w-full h-6 border-0 border-b border-b-tertiary outline-none focus:outline-none focus:border-b-tertiary bg-transparent focus:bg-transparent placeholder:text-xs placeholder:text-text-primary text-accent scrollbar-hidden text-nowrap"
           />
         ) : (
           <input
@@ -53,7 +53,7 @@ const RegularWrapper = forwardRef(
             onChange={onChange}
             required
             ref={ref}
-            className="w-full border-0 border-b border-b-tertiary outline-none focus:outline-none focus:border-b-tertiary bg-transparent focus:bg-transparent placeholder:text-xs"
+            className="w-full border-0 border-b border-b-tertiary outline-none focus:outline-none focus:border-b-tertiary bg-transparent focus:bg-transparent placeholder:text-xs placeholder:text-text-primary text-accent"
           />
         )}
       </div>

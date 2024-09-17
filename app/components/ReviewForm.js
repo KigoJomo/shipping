@@ -10,7 +10,9 @@ const RatingButton = ({ index, active, onClick }) => {
     <button
       type="button"
       className={`text-4xl ${
-        active ? 'text-secondary hover:text-secondary-dark' : 'text-tertiary hover:text-white'
+        active
+          ? 'text-secondary md:hover:text-secondary-dark'
+          : 'text-tertiary hover:text-white'
       }`}
       onClick={() => onClick(index)}
     >
@@ -89,17 +91,22 @@ const ReviewForm = ({ onNewReview }) => {
 
     // Determine which field should be in focus next
     if (!formData.rating) {
+      // Scroll to the rating section if not filled
       ratingRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (!formData.comment) {
+      // Scroll to the comment section if not filled
       commentRef.current.scrollIntoView({ behavior: 'smooth' })
       commentRef.current.focus()
     } else if (!formData.name) {
+      // Scroll to the name input field if not filled
       nameRef.current.scrollIntoView({ behavior: 'smooth' })
       nameRef.current.focus()
     } else if (!formData.email) {
+      // Scroll to the email input field if not filled
       emailRef.current.scrollIntoView({ behavior: 'smooth' })
       emailRef.current.focus()
     } else {
+      // All fields are filled, proceed with form submission
       createReview(e)
     }
   }
@@ -110,7 +117,10 @@ const ReviewForm = ({ onNewReview }) => {
       className="w-full h-fit flex items-center justify-between p-0 rounded shadow"
     >
       <div className="flex items-center gap-6 w-4/5 overflow-x-scroll scrollbar-hidden snap-x snap-mandatory">
-        <div className="rating flex flex-col w-full flex-shrink-0 snap-start" ref={ratingRef}>
+        <div
+          className="rating flex flex-col w-full flex-shrink-0 snap-start"
+          ref={ratingRef}
+        >
           <p className="text-xs md:text-base capitalize font-light text-white-dark">
             How would you rate our services?
           </p>
@@ -127,13 +137,14 @@ const ReviewForm = ({ onNewReview }) => {
             </div>
             <button
               type="button"
-              className="w-fit text-xs md:text-base capitalize font-light text-tertiary hover:text-white underline"
+              className="w-fit text-xs md:text-base capitalize font-light text-text-primary hover:text-white underline"
               onClick={clearRating}
             >
               Clear
             </button>
           </div>
         </div>
+
         <RegularWrapper
           name="comment"
           type="textarea"
@@ -175,7 +186,7 @@ const SubmitButton = ({ loading }) => (
     id="submit-review"
     aria-label="Submit Review"
     type="submit"
-    className={`h-10 w-10 md:h-16 md:w-16 capitalize flex items-center justify-center rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
+    className={`h-10 w-10 md:h-16 md:w-16 capitalize flex items-center justify-center rounded-full border bg-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
       loading ? 'opacity-50 cursor-not-allowed' : ''
     }`}
     disabled={loading}

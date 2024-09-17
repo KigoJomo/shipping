@@ -13,13 +13,17 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "var(--primary)", // Background
-        "primary-dark": "var(--primary-dark)", // Dark Background
-        secondary: "var(--secondary)", // Orange Accent
+        background: "var(--background)",
+        tertiary: "var(--tertiary)",
+        accent: "var(--accent)",
+        white: "var(--white)",
+        "text-primary": "var(--text-primary)",
+
+        primary: "var(--primary)",
+        "primary-dark": "var(--primary-dark)",
+        secondary: "var(--secondary)",
         "secondary-dark": "var(--secondary-dark)",
-        tertiary: "var(--tertiary)", // Light Gray
-        white: "var(--white)", // White
-        "white-dark": "var(--white-dark)", // White
+        "white-dark": "var(--white-dark)",
       },
     },
   },

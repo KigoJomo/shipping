@@ -18,11 +18,11 @@ const FieldWrapper = ({ name, type, label }) => {
     }
   }, [type]);
 
-  const inputClass = `${name === "email" ? 'w-[65vw]' : 'w-[40vw]'} md:w-[20vw] h-8 bg-transparent border-b border-tertiary focus:border-white focus:outline-none outline-none py-0 space-grotesk`;
+  const inputClass = `${name === "email" ? 'w-[65vw]' : 'w-[40vw]'} md:w-[20vw] h-8 bg-transparent border-b border-white focus:border-white focus:outline-none outline-none py-0 space-grotesk font-bold`;
   
   return (
     <div className="w-full flex items-end flex-wrap gap-2 md:gap-4">
-      <label className="label text-2xl text-tertiary" htmlFor={name}>{label}</label>
+      <label className="label text-2xl text-white" htmlFor={name}>{label}</label>
       {type === "textarea" ? (
         <textarea
           required

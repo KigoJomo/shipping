@@ -13,7 +13,7 @@ const Button = ({
     "px-4 py-2 rounded-lg md:rounded-xl text-white text-xs md:text-base focus:outline-none transition-all duration-200 capitalize",
     {
       "bg-transparent hover:bg-primary-dark": primary,
-      "bg-secondary hover:bg-secondary-dark": secondary,
+      "bg-tertiary hover:bg-secondary": secondary,
     },
     className
   );

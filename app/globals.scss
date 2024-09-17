@@ -8,9 +8,17 @@
   --primary-light: #3b3b3b;
   --secondary: #db4112;
   --secondary-dark: #aa310c;
-  --tertiary: #8b969c;
-  --white: #ffffff;
   --white-dark: #c0c0c0;
+
+  --background: #CDCECF;
+  --tertiary: #7b858a;
+  --text-primary: #333333;
+  --accent: #000000;
+  --white: #ffffff;
+
+  --text-secondary: #666666;
+  --button-bg: #e0e0e0;
+  --button-text: #333333;
 
   --font-size: clamp(0.9rem, 1.25vw, 2.5rem);
 }
@@ -37,7 +45,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  color: var(--white);
+  color: var(--accent);
   transition: all 0.3s ease;
 }
 
@@ -68,9 +76,15 @@ h1 {
   line-height: calc(var(--font-size) * 1.618 * 1.618 * 1.618 * 1.1);
 }
 
+.text-text-primary{
+  *{
+    color: var(--text-primary);
+  }
+}
+
 input, textarea, select, option{
   color: var(--white);
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
   outline: none;
   &:focus{
     outline: none;
@@ -340,7 +354,7 @@ html {
       display: none;
     }
 
-    background: var(--primary);
+    background: var(--background);
 
     main {
       section {

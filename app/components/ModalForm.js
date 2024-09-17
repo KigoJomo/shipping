@@ -9,7 +9,7 @@ const OptionButton = ({ text, active, onClick, type = 'button' }) => {
   return (
     <button
       onClick={onClick}
-      className={`px-4 md:px-10 py-1 md:py-2 rounded-md md:rounded-xl capitalize font-medium cursor-pointer text-nowrap text-xs md:text-base border ${
+      className={`px-4 md:px-10 py-1 md:py-2 rounded-md md:rounded-xl capitalize font-medium cursor-pointer text-nowrap text-xs md:text-base border text-text-primary ${
         active ? 'bg-secondary text-white border-transparent' : 'bg-transparent'
       }
       ${
@@ -32,7 +32,7 @@ const CategorySelect = ({
 }) => {
   return (
     <div className="category-select w-full flex flex-col gap-4">
-      <label className="text-xs md:text-base capitalize font-light text-tertiary">
+      <label className="text-xs md:text-base capitalize font-light text-text-primary">
         {label}
       </label>
       <div className="categories flex items-center justify-start flex-wrap gap-4">
@@ -124,7 +124,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 transition-all duration-700">
-      <div className="bg-primary border border-tertiary px-4 md:px-8 py-0 rounded-lg w-4/5 md:w-full h-4/5 md:h-[90%] max-w-lg relative flex flex-col gap-6">
+      <div className="bg-background border border-tertiary px-4 md:px-8 py-0 rounded-lg w-4/5 md:w-full h-4/5 md:h-[90%] max-w-lg relative flex flex-col gap-6">
         <button
           className="absolute top-4 right-6 text-5xl font-thin"
           onClick={onClose}
@@ -201,7 +201,7 @@ const ModalForm = ({ isOpen, onClose, freightOption }) => {
 
           <button
             type="submit"
-            className={`w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
+            className={`w-full px-8 py-4 capitalize flex items-center justify-between rounded-full border border-tertiary bg-tertiary md:hover:bg-secondary md:focus:bg-secondary md:focus:outline-none ${
               loading ? 'opacity-50 cursor-not-allowed' : ''
             }`}
             disabled={loading}

@@ -13,9 +13,9 @@ const CategoryItem = ({
     <ScrollAnimationWrapper
       variant="fadeIn"
       duration={2}
-      className={`category w-full h-1/3 md:h-full md:w-1/3 rounded-3xl border-2 md:border-4 border-transparent hover:border-white transition-all duration-1000 p-4 flex flex-col items-start justify-between md:items-center gap-6 ${bgColor} relative`}
+      className={`category w-full h-1/3 md:h-full md:w-1/3 rounded-3xl border-2 md:border-4 border-transparent hover:border-white transition-all duration-1000 p-4 flex flex-col items-start justify-between md:items-center gap-6 bg-tertiary relative`}
     >
-      <h3 className="w-full font-semibold">{title}</h3>
+      <h3 className="md:w-full font-semibold text-white">{title}</h3>
       <div className="h-3/5 md:w-60 aspect-square">
         <AnimatedComponent />
       </div>
