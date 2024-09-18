@@ -6,15 +6,24 @@
   --primary: #192f3b;
   --primary-dark: #071d22;
   --primary-light: #3b3b3b;
-  --secondary: #db4112;
-  --secondary-dark: #aa310c;
   --white-dark: #c0c0c0;
 
+  --background: #192f3b;
+  --tertiary: #7b858a;
+  --text-primary: #c0c0c0;
+  --accent: #ffffff;
+  --white: #ffffff;
+  --secondary: #db4112;
+  --secondary-dark: #aa310c;
+
+  /* 
   --background: #CDCECF;
   --tertiary: #7b858a;
   --text-primary: #333333;
   --accent: #000000;
   --white: #ffffff;
+  --secondary: #db4112;
+  --secondary-dark: #aa310c; */
 
   --text-secondary: #666666;
   --button-bg: #e0e0e0;
@@ -23,7 +32,7 @@
   --font-size: clamp(0.9rem, 1.25vw, 2.5rem);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
@@ -44,7 +53,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--accent);
   transition: all 0.3s ease;
 }
@@ -71,23 +80,33 @@ h2 {
 }
 
 h1 {
-  font-family: "Syne", sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: calc(var(--font-size) * 1.618 * 1.618 * 1.618);
   line-height: calc(var(--font-size) * 1.618 * 1.618 * 1.618 * 1.1);
 }
 
-.text-text-primary{
-  *{
+.text-text-primary {
+  * {
     color: var(--text-primary);
   }
 }
 
-input, textarea, select, option{
+input,
+textarea,
+select,
+option {
   color: var(--white);
   /* background-color: var(--primary); */
   outline: none;
-  &:focus{
+  &:focus {
     outline: none;
+  }
+}
+
+svg{
+  path{
+    fill: var(--accent);
+    stroke: var(--accent);
   }
 }
 
@@ -95,7 +114,8 @@ input, textarea, select, option{
   filter: url(#round);
 }
 
-.image img, img {
+.image img,
+img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -116,20 +136,21 @@ input, textarea, select, option{
 }
 
 .space-grotesk {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 .rotate-y {
   transform-style: preserve-3d;
-    box-shadow: 0px 0px 50px 0px rgb(24, 24, 24, 0.2);
-    /* // transform:; */
-  *{
+  box-shadow: 0px 0px 50px 0px rgb(24, 24, 24, 0.2);
+  /* // transform:; */
+  * {
     transform-style: preserve-3d;
   }
   &:hover {
-    transform: perspective(1500px) translateX(0px) translateY(-0%) rotateX(0deg) rotateY(25deg) translateZ(0px) scaleX(0.9);
+    transform: perspective(1500px) translateX(0px) translateY(-0%) rotateX(0deg)
+      rotateY(25deg) translateZ(0px) scaleX(0.9);
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
   }
 }
@@ -168,7 +189,7 @@ input, textarea, select, option{
   &::before,
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 100%;
     aspect-ratio: 1;
     transition: all 1s ease;
@@ -177,7 +198,7 @@ input, textarea, select, option{
   .object {
     z-index: 2;
     height: 85%;
-    background: url("/images/airplane.webp") center/cover no-repeat;
+    background: url('/images/airplane.webp') center/cover no-repeat;
     animation: rock 5s linear infinite;
   }
   &::before,
@@ -185,7 +206,7 @@ input, textarea, select, option{
     --initial: 100%;
     --final: -100%;
     z-index: 1;
-    background: url("/images/air-waves.webp") center/cover no-repeat;
+    background: url('/images/air-waves.webp') center/cover no-repeat;
     animation: scroll-vertical 1s linear infinite;
   }
   &::after {
@@ -195,13 +216,13 @@ input, textarea, select, option{
 
 @keyframes scroll-horizontal {
   0% {
-    right: var(--initial)
+    right: var(--initial);
   }
   50% {
-    right: var(--final)
+    right: var(--final);
   }
   100% {
-    right: var(--initial)
+    right: var(--initial);
   }
 }
 
@@ -229,7 +250,7 @@ input, textarea, select, option{
   .object,
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 100%;
     aspect-ratio: 1;
     transition: all 1s ease;
@@ -239,7 +260,7 @@ input, textarea, select, option{
   .object {
     z-index: 2;
     height: 75%;
-    background: url("/images/cargoship.webp") center/cover no-repeat;
+    background: url('/images/cargoship.webp') center/cover no-repeat;
     animation: rock-horizontal 5s linear infinite;
   }
   &::after {
@@ -248,7 +269,7 @@ input, textarea, select, option{
     width: 120%;
     transform: translateX(var(--final));
     z-index: 1;
-    background: url("/images/water-waves.webp") center/cover no-repeat;
+    background: url('/images/water-waves.webp') center/cover no-repeat;
     animation: scroll-horizontal 3s linear infinite;
   }
 }
@@ -275,7 +296,7 @@ input, textarea, select, option{
   &::before,
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 100%;
     aspect-ratio: 1;
     transition: all 1s ease;
@@ -285,56 +306,56 @@ input, textarea, select, option{
     z-index: 2;
     height: 85%;
     bottom: 0;
-    background: url("/images/cargotruck.webp") center/cover no-repeat;
+    background: url('/images/cargotruck.webp') center/cover no-repeat;
     animation: rock-horizontal 6s linear infinite;
   }
   &::before {
     --initial: 100%;
     --final: -100%;
-    background: url("/images/road-bottom.webp") center/cover no-repeat;
+    background: url('/images/road-bottom.webp') center/cover no-repeat;
     animation: scroll-horizontal-land 3s linear infinite;
   }
   &::after {
-    background: url("/images/road-top.webp") center/cover no-repeat;
+    background: url('/images/road-top.webp') center/cover no-repeat;
     animation: none;
   }
 }
 
-.scrollbar-hidden{
-  &::-webkit-scrollbar{
+.scrollbar-hidden {
+  &::-webkit-scrollbar {
     display: none;
   }
 }
 
-.scrollbar-themed{
-  &::-webkit-scrollbar{
+.scrollbar-themed {
+  &::-webkit-scrollbar {
     width: 6px;
     border-radius: 8px;
   }
-  &::-webkit-scrollbar-track{
+  &::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 8px;
   }
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     background: var(--tertiary);
     border-radius: 8px;
   }
-  @media (max-width: 768px){
-    &::-webkit-scrollbar{
+  @media (max-width: 768px) {
+    &::-webkit-scrollbar {
       display: none;
     }
   }
 }
 
-button.slick-arrow{
+button.slick-arrow {
   opacity: 0;
 }
 
-ul.slick-dots li button:before{
+ul.slick-dots li button:before {
   color: var(--white);
 }
 
-ul.slick-dots li.slick-active button:before{
+ul.slick-dots li.slick-active button:before {
   color: var(--white);
 }
 

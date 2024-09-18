@@ -7,14 +7,22 @@
   --primary: #192f3b;
   --primary-dark: #071d22;
   --primary-light: #3b3b3b;
+  --white-dark: #c0c0c0;
+  --background: #192f3b;
+  --tertiary: #7b858a;
+  --text-primary: #c0c0c0;
+  --accent: #ffffff;
+  --white: #ffffff;
   --secondary: #db4112;
   --secondary-dark: #aa310c;
-  --white-dark: #c0c0c0;
+  /* 
   --background: #CDCECF;
   --tertiary: #7b858a;
   --text-primary: #333333;
   --accent: #000000;
   --white: #ffffff;
+  --secondary: #db4112;
+  --secondary-dark: #aa310c; */
   --text-secondary: #666666;
   --button-bg: #e0e0e0;
   --button-text: #333333;
@@ -73,20 +81,32 @@ h1 {
   color: var(--text-primary);
 }
 
-input, textarea, select, option {
+input,
+textarea,
+select,
+option {
   color: var(--white);
   /* background-color: var(--primary); */
   outline: none;
 }
-input:focus, textarea:focus, select:focus, option:focus {
+input:focus,
+textarea:focus,
+select:focus,
+option:focus {
   outline: none;
+}
+
+svg path {
+  fill: var(--accent);
+  stroke: var(--accent);
 }
 
 .image {
   filter: url(#round);
 }
 
-.image img, img {
+.image img,
+img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
