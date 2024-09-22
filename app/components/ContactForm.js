@@ -47,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full md:w-1/2 h-[60vh] md:h-full md:px-8 mb-36 md:m-0 flex flex-col gap-6">
+    <div className="w-full md:w-1/2 h-[60vh] md:h-fit md:px-8 mb-36 md:m-0 flex flex-col gap-6">
       <ToastContainer />
       <h3>get in touch</h3>
       <form
