@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FieldWrapper from "./FieldWrapper";
 import DiagonalArrow from "./DiagonalArrow";
+import Image from "next/image";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -47,13 +48,24 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full md:w-1/2 h-[60vh] md:h-fit md:px-8 flex flex-col gap-6">
+    <div className="w-full h-[60vh] md:h-fit md:px-8 flex flex-col gap-6">
       <ToastContainer />
-      <h3>get in touch</h3>
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-8">
+        <h3>get in touch</h3>
+        <div className="image hidden md:flex w-full">
+          <Image
+            alt="consol cargo logo"
+            src="/logo-emblem.webp"
+            width={500}
+            height={500}
+            className="w-full p-8"
+          />
+        </div>
+      </div>
       <form
         action="https://public.herotofu.com/v1/2c5f7470-50e9-11ef-8946-916ba40ee922"
         method="post"
-        className="w-full h-[90%] flex flex-col justify-between"
+        className="w-full md:w-1/2 h-[90%] flex flex-col justify-between"
         onSubmit={handleSubmit}
       >
         <div className="w-full h-4/5 input-fields bg-tertiary rounded-3xl flex flex-col gap-2 px-4 py-4 overflow-y-scroll scrollbar-hidden border border-white">
