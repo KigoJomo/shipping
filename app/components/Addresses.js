@@ -39,9 +39,9 @@ const shippingLocations = [
 
 const Addresses = () => {
   return (
-    <div className="w-full flex flex-col gap-6">
+    <div className="w-full flex flex-col md:items-center gap-6">
       <h3 className="mb-4 md:mb-12">where we are located</h3>
-      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="w-full grid grid-cols-1 md:grid-cols-4 md:items-center gap-6">
         {shippingLocations.map((location, index) => (
           <PhysicalAddress
             key={index}

@@ -48,11 +48,11 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full h-[60vh] md:h-fit md:px-8 flex flex-col gap-6">
+    <div className="w-full h-[60vh] md:h-fit md:px-8 flex flex-col md:flex-row gap-6">
       <ToastContainer />
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-8">
         <h3>get in touch</h3>
-        <div className="image hidden md:flex w-full">
+        <div className="hidden md:flex w-full">
           <Image
             alt="consol cargo logo"
             src="/logo-emblem.webp"
