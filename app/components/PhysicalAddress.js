@@ -1,24 +1,27 @@
-import CallIcon from "./CallIcon";
-import LocationIcon from "./LocationIcon";
+import WarehouseIcon from '@mui/icons-material/Warehouse';
 
-const PhysicalAddress = ({index, city, address, phone_number})=>{
+const WarehouseDetail = ({label, text}) =>{
     return (
-        <div className={`w-full h-28 md:h-full border-t border-tertiary flex items-start ${index === 2 && 'border-b'}`}>
-            <p className="capitalize w-1/3 mt-2 text-accent">{city}</p>
-            <div className="w-2/3 h-full flex flex-col">
-                <div className="w-full h-1/2 flex items-start md:items-center gap-4 py-2">
-                    <i className="h-5 flex items-end">
-                        <LocationIcon />
-                    </i>
-                    <p className="capitalize space-grotesk text-text-primary">{address}</p>
-                </div>
-                <div className="w-full h-1/2 flex items-start md:items-center gap-4 py-2 border-t border-tertiary">
-                    <i className="h-5 flex items-center">
-                        <CallIcon />
-                    </i>
-                    <p className="capitalize space-grotesk text-text-primary">{phone_number}</p>
-                </div>
+        <div className="flex items-center gap-4">
+            <p className='font-bold uppercase text-accent text-xs w-1/3'>{label}</p>
+            <p className='w-2/3 uppercase text-accent text-xs'>{text ? text : '---'}</p>
+        </div>
+    )
+}
+
+const PhysicalAddress = ({ title, city, address, zip, state, phone_number})=>{
+    return (
+        <div className={`w-full md:w-64 p-4 flex flex-col gap-6 bg-tertiary rounded-3xl`}>
+            <div className="w-full flex items-center gap-4 pb-2 border-b border-accent border-opacity-5">
+                <WarehouseIcon />
+                <h4 className="font-bold">{title}</h4>
             </div>
+
+            <WarehouseDetail label="City" text={city}/>
+            <WarehouseDetail label="Address" text={address}/>
+            <WarehouseDetail label="Zip" text={zip}/>
+            <WarehouseDetail label="State" text={state}/>
+            <WarehouseDetail label="Phone Number" text={phone_number}/>
         </div>
     )
 }

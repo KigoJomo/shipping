@@ -6,19 +6,11 @@ import Procedure from './components/Procedure'
 import Contact from './components/Contact'
 import Testimonials from './components/Testimonials'
 import ClientWrapper from './components/ClientWrapper'
-import Head from 'next/head'
 
 // page.js (Server Component)
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Consol Cargo</title>
-        <meta
-          name="description"
-          content="Consol Cargo offers reliable and efficient cargo services tailored to meet your needs across Kenya and beyond."
-        />
-      </Head>
       <ClientWrapper>
         <Header />
       </ClientWrapper>
